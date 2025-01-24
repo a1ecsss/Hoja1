@@ -34,4 +34,30 @@ public class Blender implements IBlender {
     public boolean IsFull() {
         return isFull;
     }
+    
+    @Override
+    public void Fill() {
+        if (!isFull) {
+            isFull = true;
+            System.out.println("La licuadora ha sido llenada.");
+        } else {
+            System.out.println("La licuadora ya está llena.");
+        }
+    }
+
+    @Override
+    public void Empty() {
+        if (isFull) {
+            isFull = false;
+            speed = 0;
+            System.out.println("La licuadora ha sido vaciada y la velocidad reiniciada.");
+        } else {
+            System.out.println("La licuadora ya está vacía.");
+        }
+    }
+
+    @Override
+    public int GetSpeed() {
+        return speed;
+    }
 } 
